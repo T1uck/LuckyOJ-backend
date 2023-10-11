@@ -10,7 +10,11 @@
 > 前端代码仓库：https://github.com/T1uck/LuckyOJ-frontend
 
 ## 系统架构
-![](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.png)
+系统架构图
+![](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+
+业务逻辑图
+![](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E5%9B%BE.png)
 
 ## 技术选型
 
@@ -52,27 +56,27 @@
 
 登陆界面
 
-![image](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png)
+![image](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png)
 
-API 商城界面
+注册界面
 
-![image](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/API%E5%95%86%E5%9F%8E%E7%95%8C%E9%9D%A2.png)
+![image](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E6%B3%A8%E5%86%8C%E7%95%8C%E9%9D%A2.png)
 
-接口调用界面
+题库界面
 
-![image](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E7%95%8C%E9%9D%A2.png)
+![image](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E9%A2%98%E5%BA%93%E7%95%8C%E9%9D%A2.png)
 
-接口管理界面（管理员）
+做题界面
 
-![image](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/%E6%8E%A5%E5%8F%A3%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png)
+![image](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E5%81%9A%E9%A2%98%E7%95%8C%E9%9D%A2.png)
 
-接口统计界面（管理员）
+提交记录界面
 
-![image](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/%E6%8E%A5%E5%8F%A3%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E7%95%8C%E9%9D%A2.png)
+![image](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E6%9F%A5%E7%9C%8B%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF.png)
 
-个人中心界面
+题目管理界面
 
-![image](https://github.com/T1uck/luckyApi-frontend/blob/master/public/api/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83%E7%95%8C%E9%9D%A2.png)
+![image](https://github.com/T1uck/LuckyOJ-frontend/blob/main/public/image/%E9%A2%98%E7%9B%AE%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png)
 
 ## 快速上手
 
@@ -80,16 +84,7 @@ API 商城界面
 
 1. 将各模块配置修改成你自己对应的端口、账号、密码等等
 2. 启动Nacos、Mysql、Redis（如需修改依赖版本，请自行查找对应适配版本）
-3. 将公共服务 easyapi-common 以及下载的 SDK 安装（install）到本地maven仓库
-4. 按顺序启动服务
-
-服务启动顺序如下，仅供参考：
-
-1. easyapi-backend
-
-2. easyapi-interface
-
-3. easyapi-gateway
+4. 启动服务
 
 ### 前端
 
