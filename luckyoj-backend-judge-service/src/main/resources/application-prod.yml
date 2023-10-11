@@ -1,0 +1,23 @@
+# 生产环境配置文件
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/toj
+    username: root
+    password: 123456
+  # Redis 配置
+  redis:
+    database: 2
+    host: redis
+    port: 6379
+    timeout: 5000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos:8848
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    password: guest
+    username: guest

@@ -1,0 +1,54 @@
+version: '3'
+services:
+  luckyoj-backend-gateway:
+    container_name: luckyoj-backend-gateway
+    build:
+      context: ./luckyoj-backend-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8101:8101"
+    networks:
+      - mynetwork
+
+  luckyoj-backend-user-service:
+    container_name: luckyoj-backend-user-service
+    build:
+      context: ./luckyoj-backend-user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8102:8102"
+    networks:
+      - mynetwork
+    depends_on:
+      - luckyoj-backend-gateway
+
+  luckyoj-backend-question-service:
+    container_name: luckyoj-backend-question-service
+    build:
+      context: ./luckyoj-backend-question-service
+      dockerfile: Dockerfile
+    ports:
+      - "8103:8103"
+    networks:
+      - mynetwork
+    depends_on:
+      - luckyoj-backend-user-service
+      - luckyoj-backend-gateway
+
+  luckyoj-backend-judge-service:
+    container_name: luckyoj-backend-judge-service
+    build:
+      context: ./luckyoj-backend-judge-service
+      dockerfile: Dockerfile
+    ports:
+      - "8104:8104"
+    networks:
+      - mynetwork
+    depends_on:
+      - luckyoj-backend-user-service
+      - luckyoj-backend-question-service
+      - luckyoj-backend-gateway
+
+# 网络，不定义的话就是默认网络
+networks:
+  mynetwork:

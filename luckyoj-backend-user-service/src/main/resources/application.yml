@@ -1,0 +1,97 @@
+# ??????
+# @author <a href="https://github.com/lilucky">?????</a>
+# @from <a href="https://lucky.icu">????????</a>
+spring:
+  application:
+    name: luckyoj-backend-user-service
+  # ?? dev ??
+  profiles:
+    active: dev
+  # ?? swagger3
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # session ??
+  session:
+    store-type: redis
+    # 30 ???
+    timeout: 2592000
+  # ?????
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/toj
+    username: root
+    password: 12345678
+  # Redis ??
+  redis:
+    database: 2
+    host: localhost
+    port: 6379
+    timeout: 5000
+  servlet:
+    multipart:
+      # ????
+      max-file-size: 10MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  #邮件发送
+  mail:
+    # 发送验证码的邮箱
+    username: 815845992@qq.com
+    # 授权码
+    password: jtptljlmzrqybdff
+    # SMTP服务器
+    host: smtp.qq.com
+    # 编码
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          # 如果是用 SSL 方式，需要配置如下属性,使用qq邮箱的话需要开启
+          ssl:
+            enable: true
+            required: true
+          # 邮件接收时间的限制，单位毫秒
+          timeout: 10000
+          # 连接时间的限制，单位毫秒
+          connectiontimeout: 10000
+          # 邮件发送时间的限制，单位毫秒
+          writetimeout: 10000
+
+server:
+  address: 0.0.0.0
+  port: 8102
+  servlet:
+    context-path: /api/user
+    # cookie 30 ???
+    session:
+      cookie:
+        max-age: 2592000
+        path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # ????????????
+      logic-delete-value: 1 # ?????????? 1?
+      logic-not-delete-value: 0 # ?????????? 0?
+# ??????
+codesandbox:
+  type: remote
+knife4j:
+  enable: true
+
+aliyun:
+  oss:
+    endpoint: oss-cn-guangzhou.aliyuncs.com
+    urlPrefix: http://luckyapi.oss-cn-guangzhou.aliyuncs.com
+    accessKeyId: LTAI5tNcDxjQBv7pVm24jnK9
+    accessKeySecret: l4JLrQ1lqfC662IGj5RxhuP2lLt2uB
+    bucketName: luckyapi
+    fileHost: files
+
